@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'inapp/stylz.css' %}">
+    <script src="{% static 'inapp/load.js' %}"></script>
+  </head>
+  <body>
+    
+<!--{{elem|json_script:"test"}}-->
+<!--<script src="{% static 'inapp/tst.js' %}"></script>-->
+<form action="{% url 'inapp:addItem' %}" method="post">
+  {% csrf_token %}
+  <label for="insert">Add Item:</label>
+  <input type="text" id="insert" name="insert" required>
+  <input type="submit" value="Insert">
+</form>
+{{error}}
+<script src="{% static 'inapp/something.js' %}"></script>
+</body>
+</html>
